@@ -1,0 +1,53 @@
+/* Обертка слайдера */
+.slider {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+/* Изображения внутри слайдера */
+.slider a {
+  display: block;
+  width: 200px; /* Размер превью */
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid gray;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при наведении */
+.slider a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображения внутри ссылки */
+.slider a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .slider {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .slider a {
+    width: 45%; /* Меньше ширина на мобильных устройствах */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider a {
+    width: 100%; /* Полная ширина для мобильных */
+    height: 200px;
+  }
+}
